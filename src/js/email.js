@@ -200,6 +200,10 @@ function check_values() {
 	{
 	 name = document.getElementById("name").value;
 	}
+	if(typeof $j('#contactform #phone').val() != "undefined" )
+	{
+	 name = document.getElementById("phone").value;
+	}
 	if(typeof $j('#contactform #email').val() != "undefined" )
 	{
 	 email = document.getElementById("email").value;
@@ -219,19 +223,31 @@ function check_values() {
 	 if($j('#contactform #name').val()=='') {
 	 	var hasClass=$j('#contactform #name').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform #name').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, введите ваше имя</label>');
+	 	    $j('#contactform #name').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, укажите ваше имя</label>');
 			$j('#contactform #name').focus();
 			//return false;
 			errors++;
 		}
 		else
-		$j('#contactform #name').parent().find(".error").remove();
+		$j('#contactform #phone').parent().find(".error").remove();
+
+		if($j('#contactform #phone').val()!=undefined)
+		if($j('#contactform #phone').val()=='') {
+			var hasClass=$j('#contactform #phone').parent().find(".error").hasClass("error");
+			if(!hasClass)
+					$j('#contactform #phone').parent().append('<label for="contactphone" generated="true" class="error">Пожалуйста, укажите ваш номер телефона</label>');
+			 $j('#contactform #phone').focus();
+			 //return false;
+			 errors++;
+		 }
+		 else
+		 $j('#contactform #phone').parent().find(".error").remove();
 		
 		if($j('#contactform #email').val()!=undefined)
 		if(validate_email($j('#contactform #email').val())==false ) {
 		var hasClass=$j('#contactform #email').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform #email').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, введите адрес почты (e-mail)</label>');	
+	 	    $j('#contactform #email').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, укажите ваш (e-mail)</label>');	
 			$j('#contactform #email').focus();
 			//return false;
 			errors++;
@@ -256,7 +272,7 @@ function check_values() {
 		if($j('#contactform #body').val()==''){
 		var hasClass=$j('#contactform #body').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform #body').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, введите текст сообщения</label>');	
+	 	    $j('#contactform #body').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, укажите текст сообщения</label>');	
 			$j('#contactform #body').focus();
 			//return false;
 			errors++;
@@ -287,6 +303,11 @@ function check_values_loans() {
 	{
 	 name = document.getElementById("name").value;
 	}
+
+	if(typeof $j('#contactform #phone').val() != "undefined" )
+	{
+	 name = document.getElementById("phone").value;
+	}
 	if(typeof $j('#contactform #subject').val() != "undefined" )
 	{
 	 subject = document.getElementById("subject").value;
@@ -302,13 +323,31 @@ function check_values_loans() {
 	 if($j('#contactform #name').val()=='') {
 	 	var hasClass=$j('#contactform #name').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform #name').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, введите ваше имя</label>');
+	 	    $j('#contactform #name').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, укажите ваше имя</label>');
 			$j('#contactform #name').focus();
 			//return false;
 			errors++;
 		}
 		else
 		$j('#contactform #name').parent().find(".error").remove();
+
+
+
+		if($j('#contactform #phone').val()!=undefined)
+	 if($j('#contactform #phone').val()=='') {
+	 	var hasClass=$j('#contactform #phone').parent().find(".error").hasClass("error");
+	 	if(!hasClass)
+	 	    $j('#contactform #phone').parent().append('<label for="contactphone" generated="true" class="error">Пожалуйста, укажите ваш номер телефона</label>');
+			$j('#contactform #phone').focus();
+			//return false;
+			errors++;
+		}
+		else
+		$j('#contactform #phone').parent().find(".error").remove();
+
+		
+
+
 		
 		
 		if($j('#contactform #subject').val()!=undefined)
@@ -327,7 +366,7 @@ function check_values_loans() {
 		if($j('#contactform #name_s').val()==''){
 		var hasClass=$j('#contactform #name_s').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform #name_s').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, введите вашу фамилию!</label>');	
+	 	    $j('#contactform #name_s').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, укажите вашу фамилию!</label>');	
 			$j('#contactform #name_s').focus();
 			//return false;
 			errors++;
@@ -412,7 +451,7 @@ function check_values_booking() {
 	 if($j('#contactform_booking #name').val()=='') {
 	 	var hasClass=$j('#contactform_booking #name').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform_booking #name').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, введите ваше имя</label>');
+	 	    $j('#contactform_booking #name').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, укажите ваше имя</label>');
 			$j('#contactform_booking #name').focus();
 			//return false;
 			errors++;
@@ -424,7 +463,7 @@ function check_values_booking() {
 		if(validate_email($j('#contactform_booking #email').val())==false ) {
 		var hasClass=$j('#contactform_booking #email').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform_booking #email').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, введите ваш почтовый адрес (e-mail)</label>');	
+	 	    $j('#contactform_booking #email').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, укажите ваш почтовый адрес (e-mail)</label>');	
 			$j('#contactform_booking #email').focus();
 			//return false;
 			errors++;
@@ -439,7 +478,7 @@ function check_values_booking() {
  if($j('#contactform_booking #surname').val()=='') {
 	 	var hasClass=$j('#contactform_booking #surname').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform_booking #surname').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, введите вашу фамилию</label>');
+	 	    $j('#contactform_booking #surname').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, укажите вашу фамилию</label>');
 			$j('#contactform_booking #surname').focus();
 			//return false;
 			errors++;
@@ -449,7 +488,7 @@ function check_values_booking() {
  if($j('#contactform_booking #arrival').val()=='') {
 	 	var hasClass=$j('#contactform_booking #arrival').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform_booking #arrival').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, введите дату прибытия</label>');
+	 	    $j('#contactform_booking #arrival').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, укажите дату прибытия</label>');
 			$j('#contactform_booking #arrival').focus();
 			//return false;
 			errors++;
@@ -550,7 +589,7 @@ function check_values_popup() {
 	 if($j('#contactform_popup #name_popup').val()=='') {
 	 	var hasClass=$j('#contactform_popup #name_popup').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform_popup #name_popup').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, введите ваше имя</label>');
+	 	    $j('#contactform_popup #name_popup').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, укажите ваше имя</label>');
 			$j('#contactform_popup #name_popup').focus();
 			//return false;
 			errors++;
@@ -562,7 +601,7 @@ function check_values_popup() {
 		if(validate_email($j('#contactform_popup #email_popup').val())==false ) {
 		var hasClass=$j('#contactform_popup #email_popup').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform_popup #email_popup').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, введите адрес электронной почты (e-mail)</label>');	
+	 	    $j('#contactform_popup #email_popup').parent().append('<label for="contactname" generated="true" class="error">Пожалуйста, укажите адрес электронной почты (e-mail)</label>');	
 			$j('#contactform_popup #email_popup').focus();
 			//return false;
 			errors++;

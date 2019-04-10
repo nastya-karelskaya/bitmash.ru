@@ -180,6 +180,77 @@ body #top-scroll:hover {
 
 body .services-item {
   height: 110px;
+  position: relative;
+  background: url(images/medicine/1.jpg) center no-repeat; 
+  background-size: cover;
+  height: 180px; 
+  padding:25px 30px 10px; 
+  border-radius: 15px;
+  
 }
 
+body .services-item:hover {
+  /* background-color:#121039;  
+
+  
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+  left: 0;
+  top: 0; */
+  /* background-color: #030820; */
+  /* z-index: 0; */
+  /* color: #ffffff;
+  transition: all .5s; */
+
+}
+
+body .services-item .wrapper {
+  width: 100%;
+  height: 100%;
+  /* z-index: 10000; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  
+  background-color: #030820;  
+  /* background-color:#4351a5; */
+  /* background-color: #67ffd1;
+  background-color: #4dd1f1; 
+   */
+  opacity: .4;
+
+}
+body .services-item .wrapper:hover {
+  /* background-color: #030820;  
+  background-color:#4351a5;
+  background-color: #67ffd1;
+  background-color: #4dd1f1;  */
+  background-color: unset;
+  
+  opacity: 1;
+  transition: all .5s;
+  cursor: pointer;
+
+}
+
+body .services-item h5 {
+  font-size: 22px;
+  position: absolute;
+  color: #030820; 
+  color: #ffffff;
+  transition: color .5s;
+
+  /* color: #aeb0f3; */
+  /* color: #67ffd1; */
+
+}
+
+body .services-item h5:hover {
+  cursor: pointer;
+
+}
 

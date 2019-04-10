@@ -2521,9 +2521,23 @@ jQuery(window).load(function(){
 	
 });
 
+$.noConflict();
 
+jQuery( document ).ready(function( $ ) {
 
-var navbarHeight = 20;
+	$("#section-services .services-item").mouseenter(function(){
+		//e.preventDefault();
+		console.log('wrapper');
+		$(this).find("h5").css("color", "#67ffd1" );
+	});	
+
+	$("#section-services .services-item").mouseleave(function(){
+		//e.preventDefault();
+		console.log('wrapper');
+		$(this).find("h5").css("color", "#ffffff" );
+	});	
+	// Code that uses jQuery's $ can follow here.
+	var navbarHeight = 20;
     $('#top-scroll').click(function (e) {
         e.preventDefault();
         if( $(window).width() > 991 ) {
@@ -2596,5 +2610,11 @@ var navbarHeight = 20;
 			}, 350);
 			
 		});	
+
+		
+});
+
+
+	
 
 		
